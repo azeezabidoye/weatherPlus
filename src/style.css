@@ -1,0 +1,102 @@
+:root {
+    font-size: 62.5%;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'montserrat' sans-serif;
+    background-color: #303535;
+  }
+  
+  #app {
+    background-image: url(./assets/coldBack.jpg);
+    max-width: 48rem;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    transition: 0.4s;
+  }
+
+  #app.warm { background-image: url(./assets/warmBack.jpg); }
+  
+  main {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(09, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
+    padding: 2.5rem;
+  }
+  
+  .searchBox {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  
+  .searchBar {
+    width: 100%;
+    padding: 1.5rem;
+  
+    font-size: 2rem;
+    color: #313131;
+  
+    border: none;
+    appearance: none;
+    background: none;
+    outline: none;
+  
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 1.6rem 0 1.6rem;
+    transition: 0.4s;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .searchBar:focus {
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.75);
+    border-radius: 1.6rem 0 1.6rem 0;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  
+  .location {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #efefef;
+    text-align: center;
+    text-shadow: 0.1rem 0.3rem rgba(09, 0, 0, 0.25);
+  }
+  
+  .date {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #efefef;
+    text-align: center;
+    font-style: italic;
+  }
+
+.weatherBox {
+    text-align: center;
+}
+
+.temp {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 10.2rem;
+    font-weight: 900;
+    color: #efefef;
+
+    text-shadow: 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 1.5rem;
+    margin: 3rem 0;
+
+    box-shadow: 0.3rem 0.6rem rgba(0, 0, 0, 0.25);
+}
+
+.weatherStatus {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #efefef;
+    text-shadow: 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
