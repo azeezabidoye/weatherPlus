@@ -20,7 +20,7 @@
       
 
       <div class="weatherBox">
-        <div class="temp">23<sup>o</sup>C</div>
+        <div class="temp">{{ Math.round(weathers.main.temp) }}<sup>o</sup>C</div>
         <div class="weatherStatus">cloudy</div>
       </div>
     </main>
