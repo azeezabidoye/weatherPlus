@@ -21,7 +21,7 @@
 
       <div class="weatherBox">
         <div class="temp">{{ Math.round(weathers.main.temp) }}<sup>o</sup>C</div>
-        <div class="weatherStatus">cloudy</div>
+        <div class="weatherStatus">{{  weathers.weather[0].main}}</div>
       </div>
     </main>
   </div>
