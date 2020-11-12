@@ -1,6 +1,6 @@
-
+  
     <template>
-  <div id="app" :class="typeof weathers.main != 'undefined' && weathers.main.temp > 16 ? 'warm' : ''">
+  <div id="app" :class="typeof weathers.current != 'undefined' && weathers.current.temperature > 16 ? 'warm' : ''">
     <main>
       <div class="searchBox">
         <input type="text" 
@@ -11,17 +11,17 @@
         />
       </div>
 
-      <div class="weatherWrap" v-if="typeof weathers.main != 'undefined'">
+      <div class="weatherWrap" v-if="typeof weathers.current != 'undefined'">
         <div class="locationBox">
-          <div class="location">{{ weathers.name }}, {{ weathers.sys.country }}</div>
+          <div class="location">{{ weathers.location.name }}, {{ weathers.location.country }}</div>
           <div class="date">{{ dateBuilder() }}</div>
         </div>
       </div>
       
 
-      <div class="weatherBox">
-        <div class="temp">{{ Math.round(weathers.main.temp) }}<sup>o</sup>C</div>
-        <div class="weatherStatus">cloudy</div>
+      <div class="weatherBox" v-if="typeof weathers.current != 'undefined'">
+        <div class="temp">{{ weathers.current.temperature }}<sup>o</sup>C</div>
+        <div class="weatherStatus">{{ weathers.current.weather_descriptions[0] }}</div>
       </div>
     </main>
   </div>
@@ -34,8 +34,8 @@ export default {
   name: 'App',
   data() {
     return {
-      api_key: 'd573a0ecb765039db0fe03c2cfd09aa0', 
-      url_base: 'https://api.openweathermap.org/data/2.5/',
+      api_key: '712487c88ee4fb5706ae8cce8e09cd17', 
+      url_base: 'http://api.weatherstack.com/',
       query: '',
       weathers: {}
     }
@@ -43,7 +43,7 @@ export default {
   methods: {
     fetchWeather(e) {
       if (e.key == 'Enter') {
-        fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
+        fetch(`${this.url_base}current?access_key=${this.api_key}&query=${this.query}&units=m`)
         .then(res => {
           return res.json();
         }).then(this.setResults);
